@@ -15,6 +15,21 @@ with open('config.json') as json_file:
 
 print(config_dict)
 
+# extract files from folders with some renaming
+for path, subdirs, files in os.walk(r'./source'):
+    for filename in files:
+        f = os.path.join(path, filename)
+        tokens = f.split("/")
+        if len(tokens) == 4:
+            os.rename(f, os.path.join("./source", tokens[2] + "_" + filename))
+
+folders = list(os.walk("./source"))[1:]
+
+# drop all empty folders in a source dir
+for folder in folders:
+    if not folder[2]:
+        os.rmdir(folder[0])
+
 all_files_unsorted = []
 for path, subdirs, files in os.walk(r'./source'):
    for filename in files:
