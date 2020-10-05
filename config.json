@@ -1,6 +1,7 @@
 {
-    "dry_run_mode": "true",
+    "dry_run_mode": "false",
     "dest_folder_name": "dest",
-    "dest_file_name": "Гарри Поттер и Философский камень.mp3",
-    "filtered_files": [".DS_Store"]
+    "dest_file_name": "Гарри Поттер и Узник Азкабана.mp3",
+    "filtered_files": [".DS_Store", "cover.jpg"],
+    "cover_file_name": "cover.jpg"
 }
