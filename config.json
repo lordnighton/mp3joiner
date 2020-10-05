@@ -1,4 +1,5 @@
 {
+    "dry_run_mode": "true",
     "dest_folder_name": "dest",
     "dest_file_name": "Гарри Поттер и Философский камень.mp3",
     "filtered_files": [".DS_Store"]

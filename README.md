@@ -3,6 +3,7 @@
 ## Prerequisites
 natsort & ffmpeg utils installed
 ```
+pip3 install numpy
 pip3 install ffmpeg
 pip3 install natsort
 ```
