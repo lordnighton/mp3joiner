@@ -38,8 +38,8 @@ for path, subdirs, files in os.walk(r'./source'):
             if filename in config_dict['filtered_files']:
                 print("Needs to be filtered = " + filename)
             else:
-                if "'" in str(f):
-                    stripped_file_name = f.replace("'","")
+                if ".." in str(f) or "'" in str(f) or "«" in str(f) or "»" in str(f):
+                    stripped_file_name = f.replace("'","").replace("«","").replace("»","").replace(".....",".").replace("....",".").replace("...",".").replace("..",".")
                     shutil.move(f, stripped_file_name)
                 else:
                     stripped_file_name = f
