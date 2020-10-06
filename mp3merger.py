@@ -38,7 +38,12 @@ for path, subdirs, files in os.walk(r'./source'):
             if filename in config_dict['filtered_files']:
                 print("Needs to be filtered = " + filename)
             else:
-                all_files_unsorted.append(str(f))
+                if "'" in str(f):
+                    stripped_file_name = f.replace("'","")
+                    shutil.move(f, stripped_file_name)
+                else:
+                    stripped_file_name = f
+                all_files_unsorted.append(str(stripped_file_name))
 
 sorted_files = natsort.natsorted(all_files_unsorted,reverse=False)
 
